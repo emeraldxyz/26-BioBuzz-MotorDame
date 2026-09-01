@@ -1,5 +1,8 @@
 package org.firstinspires.ftc.teamcode;
-
+/*
+      note from nic: all of these values that are suposed to be tuned i took from our decode robot and theyre tuned for greg NV.
+        they will most likely have to be retuned  -aug 31st
+*/
 import androidx.annotation.NonNull;
 
 import com.acmerobotics.dashboard.canvas.Canvas;
