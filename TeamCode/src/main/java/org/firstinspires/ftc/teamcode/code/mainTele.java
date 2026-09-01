@@ -15,14 +15,14 @@ public class mainTele extends LinearOpMode {
 	public void runOpMode() throws InterruptedException {
 		if (TuningOpModes.DRIVE_CLASS.equals(MecanumDrive.class)) {
 			MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(0, 0, 0));
-
+            intake intake = new intake(gamepad2, hardwareMap);
 
 			waitForStart();
 
 			while (opModeIsActive()) {
 
 				Driving.drive(drive,gamepad1);
-
+                intake.run();
 
 			}
 
