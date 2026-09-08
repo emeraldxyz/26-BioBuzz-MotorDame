@@ -13,13 +13,13 @@ public class Driving {
 
 		double xInputLeft = -gamepad1.left_stick_x;
 		double yInputLeft = -gamepad1.left_stick_y;
-		double xInputRight = -gamepad1.right_stick_x;
+		double xInputRight = gamepad1.right_stick_x;
 		drive.setDrivePowers(new PoseVelocity2d(
 				new Vector2d(
-						xInputLeft,
-						yInputLeft
+						-gamepad1.left_stick_x,
+						gamepad1.left_stick_y
 				),
-				xInputRight
+				-gamepad1.right_stick_x
 		));
 	}
 }

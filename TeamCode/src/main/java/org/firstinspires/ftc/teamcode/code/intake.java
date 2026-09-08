@@ -9,14 +9,17 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 public class intake  {
 
-    public CRServo intakeMotor;
+    public CRServo intakeMotorFront;
+    public CRServo intakeMotorBack;
     boolean toggle = false;
     Gamepad controler;
 
 
     public intake(Gamepad gamepad2, HardwareMap hardwareMap){
 
-        intakeMotor = hardwareMap.get(CRServo.class,"intakeMotor");
+        intakeMotorFront = hardwareMap.get(CRServo.class,"intakeMotorFront");
+
+        intakeMotorBack = hardwareMap.get(CRServo.class,"intakeMotorBack");
         controler = gamepad2;
 
     }
@@ -29,9 +32,11 @@ public class intake  {
 
 
         if(toggle){
-            intakeMotor.setPower(1);
+            intakeMotorFront.setPower(1);
+            intakeMotorBack.setPower(-1);
         }else{
-            intakeMotor.setPower(0);
+            intakeMotorFront.setPower(0);
+            intakeMotorBack.setPower(0);
         }
 
     }
