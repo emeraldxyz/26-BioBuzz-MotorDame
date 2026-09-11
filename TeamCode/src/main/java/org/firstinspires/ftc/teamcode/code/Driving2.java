@@ -6,9 +6,8 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 
 import org.firstinspires.ftc.teamcode.MecanumDrive;
 
-public class Driving {
+public class Driving2 {
 	public static MecanumDrive drive;
-
 
     public static void drive(MecanumDrive drive, Gamepad gamepad1) {
 
@@ -20,11 +19,12 @@ public class Driving {
 		drive.setDrivePowers(new PoseVelocity2d(
 				new Vector2d(
 						-gamepad1.left_stick_x,
-						gamepad1.left_stick_y
+                        -gamepad1.right_stick_x
 				),
-				-gamepad1.right_stick_x
+				 gamepad1.left_stick_y
 		));
 	}
 }
+
 
 }
