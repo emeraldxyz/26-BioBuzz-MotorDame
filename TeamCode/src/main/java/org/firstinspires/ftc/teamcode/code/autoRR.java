@@ -21,9 +21,9 @@ import org.firstinspires.ftc.teamcode.tuning.TuningOpModes;
 public class autoRR extends LinearOpMode {
 
     DcMotorEx shooter;
-
+    Doorman doorman = new Doorman();
     public void fire(){
-        Doorman doorman = new Doorman();
+
         shooter.setVelocity(1500);
         sleep(1500);
         doorman.run();
@@ -35,6 +35,7 @@ public class autoRR extends LinearOpMode {
         shooter = hardwareMap.get(DcMotorEx.class,"shooter");
         Pose2d beginPose = new Pose2d(0, 0, 0);
 
+        doorman.door(hardwareMap, this);
                 MecanumDrive drive = new MecanumDrive(hardwareMap, beginPose);
 
                 waitForStart();
